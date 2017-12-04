@@ -1,0 +1,14 @@
+package com.sdapps.repositories;
+
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.sdapps.entities.Cohort;
+
+public interface CohortRepository extends CrudRepository<Cohort, Integer> {
+
+	   @Query("SELECT c FROM Cohort c WHERE c.startDate > CURRENT_TIMESTAMP")
+	    public Collection<Cohort> findUpcomingCohorts();
+}

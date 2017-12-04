@@ -1,0 +1,43 @@
+package com.sdapps.services;
+
+import org.springframework.stereotype.Service;
+
+import com.sdapps.entities.StudentApplication;
+import com.sdapps.repositories.AddressRepository;
+import com.sdapps.repositories.CohortRepository;
+import com.sdapps.repositories.ContactRepository;
+import com.sdapps.repositories.OriginRepository;
+import com.sdapps.repositories.StudentApplicationRepository;
+import com.sdapps.repositories.StudentRepository;
+
+@Service
+public class StudentApplicationServiceImpl implements StudentApplicationService {
+	
+	private AddressRepository addressRepo;
+	private CohortRepository cohortRepo;
+	private ContactRepository contactRepo;
+	private OriginRepository originRepo;
+	private StudentApplicationRepository appRepo;
+	private StudentRepository studentRepo;
+	
+	public StudentApplicationServiceImpl(AddressRepository addressRepo,
+	CohortRepository cohortRepo,
+	ContactRepository contactRepo,
+	OriginRepository originRepo,
+	StudentApplicationRepository appRepo,
+	StudentRepository studentRepo) {
+		this.addressRepo = addressRepo;
+		this.cohortRepo = cohortRepo;
+		this.contactRepo = contactRepo;
+		this.originRepo = originRepo;
+		this.appRepo = appRepo;
+		this.studentRepo = studentRepo;
+	}
+
+	@Override
+	public StudentApplication createStudentApplication(StudentApplication application) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

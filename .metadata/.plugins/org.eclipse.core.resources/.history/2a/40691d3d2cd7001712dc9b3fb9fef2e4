@@ -1,0 +1,5 @@
+package com.sdapps.controllers;
+
+public class StudentApplicationController {
+
+}

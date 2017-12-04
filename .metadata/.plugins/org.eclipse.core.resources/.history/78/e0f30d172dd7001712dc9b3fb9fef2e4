@@ -1,0 +1,29 @@
+package com.sdapps.controllers;
+
+import java.util.Collection;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sdapps.entities.Origin;
+import com.sdapps.repositories.CohortRepository;
+import com.sdapps.repositories.OriginRepository;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+public class StudentApplicationController {
+	
+	private OriginRepository originRepo;
+	private CohortRepository cohortRepo;
+	
+	public StudentApplicationController(OriginRepository originRepo, CohortRepository cohortRepo) {
+		this.originRepo = originRepo;
+		this.cohortRepo = cohortRepo;
+	}
+
+	@GetMapping("/data/application/contactform")
+	public Collection<Origin> getFormData() {
+		
+	}
+}

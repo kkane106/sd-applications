@@ -1,0 +1,5 @@
+package com.sdapps.mail;
+
+public class EmailServiceImpl implements EmailService {
+
+}

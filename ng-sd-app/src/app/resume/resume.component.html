@@ -1,0 +1,6 @@
+<h3>Upload Resume</h3>
+<input type="file" (change)="fileChange($event)" placeholder="Upload file"
+  accept=".pdf,.doc,.docx,.txt">
+<form #resumeForm="ngForm" (ngSubmit)="submitApplication(resumeForm)">
+  <input type="submit" value="Submit Application" class="btn btn-primary" />
+</form>

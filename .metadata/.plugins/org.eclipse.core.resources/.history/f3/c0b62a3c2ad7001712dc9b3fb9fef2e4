@@ -1,0 +1,37 @@
+package com.sdapps.entities;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="student_application")
+public class StudentApplication {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	
+	private Date createDate;
+	
+	private Date updateDate;
+	
+	@ManyToOne
+	@JoinColumn(name="student_id")
+	private Student student;
+	
+	@ManyToOne
+	@JoinColumn(name="cohort_id")
+	private Cohort cohort;
+	
+	@ManyToOne
+	@JoinColumn(name="origin_id")
+	private Origin origin;
+
+}

@@ -1,0 +1,7 @@
+package com.sdapps.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface AddressRepostiory extends CrudRepository<T, ID> {
+
+}

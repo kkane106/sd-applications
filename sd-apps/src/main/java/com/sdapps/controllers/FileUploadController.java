@@ -1,0 +1,38 @@
+package com.sdapps.controllers;
+
+import java.util.Map;
+
+import javax.mail.MessagingException;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.sdapps.mail.EmailService;
+
+@RestController
+public class FileUploadController {
+	
+	private EmailService mailer;
+	
+	public FileUploadController(EmailService mailer) {
+		this.mailer = mailer;
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping("/file/upload")
+	public ResponseEntity uploadFile(@RequestParam("uploadFile") MultipartFile file) {
+		System.out.println(file.getOriginalFilename());
+		try {
+			mailer.sendSimpleMessageWithAttachment("kkane106@gmail.com", "test with attachment", "this is still only a test", file, file.getOriginalFilename());
+		} catch (MessagingException e) {
+			e.printStackTrace();
+			return new ResponseEntity<>(e, null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>("", null, HttpStatus.ACCEPTED);
+	}
+}

@@ -1,0 +1,5 @@
+package com.sdapps.helpers;
+
+public class ApplicationDTO {
+
+}

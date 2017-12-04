@@ -1,0 +1,14 @@
+package com.sdapps.mail;
+
+import org.springframework.mail.SimpleMailMessage;
+
+public class EmailServiceImpl implements EmailService {
+
+	@Override
+	public String sendSimpleMessage(String to, String subject, String text) {
+		SimpleMailMessage message = new SimpleMailMessage();
+		
+		return null;
+	}
+
+}

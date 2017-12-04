@@ -1,0 +1,7 @@
+package com.sdapps.services;
+
+import com.sdapps.entities.StudentApplication;
+
+public interface StudentApplicationService {
+	private StudentApplication createStudentApplication(StudentApplication application);
+}
